@@ -1,4 +1,4 @@
-require_relative '../../lib/metaproject/metaproject'
+require 'metaproject'
 
 project :blog do
   klass :post do
@@ -14,8 +14,8 @@ project :blog do
   end
 end
 
-post Blog::Post.new "Hello", %w(hello first), <<EOF
+post = Blog::Post.new "Hello", %w(hello first), <<EOF
   MetaProgramming
 EOF
 
-post.new.inspect
+puts post.new.inspect
